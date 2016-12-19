@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Advent Calendar</title>
+    <style>
+
+    html, body{
+      background-color:darkred;
+    }
+    #bg{
+      width:1024px;
+      height: 768px;
+      margin:auto;
+      background-image: url(pics/xmasbg.jpg);
+      position:relative;
+      z-index:1;
+    }
+    .day{
+      position:absolute;
+      width:80px;
+      height:80px;
+      background-color:rgba(240, 240, 240, 0.4);
+      border: darkred solid 2px;
+      border-radius: 4px;
+    }
+    .day > p{
+      color:darkred;
+      position:relative;
+      top: -12px;
+      text-align:center;
+      font-size: 2em;
+      text-shadow: 0 0 4px white;
+    }
+    .day:hover{
+      transform: scale(1.3);
+      cursor:pointer;
+    }
+    #d1{
+
+      left: 900px;
+      top: 600px;
+    }
+    #d2{
+      left: 400px;
+      top: 200px;
+    }
+    #d3{
+      left: 50px;
+      top: 80px;
+      background-position:center;
+    }
+    #d4{
+      left: 800px;
+      top: 60px;
+    }
+    #d5{
+      left: 100px;
+      top: 500px;
+      background-position:center;
+    }
+    #d6{
+      left: 450px;
+      top: 550px;
+      background-position:center;
+    }
+    #d7{
+      left: 700px;
+      top: 350px;
+      background-position:center;
+    }
+    #d8{
+      left: 300px;
+      top: 350px;
+      background-position:center;
+    }
+    #d9{
+      left: 250px;
+      top: 50px;
+      background-position:center;
+    }
+    #d10{
+      left: 550px;
+      top: 220px;
+      background-position:center;
+    }
+    #d11{
+      left: 70px;
+      top: 225px;
+      background-position:center;
+    }
+    #d12{
+      left:180px;
+      top: 625px;
+      background-position:right;
+    }
+    #d13{
+      left:240px;
+      top: 190px;
+      background-position:center;
+    }
+    #d14{
+      left:875px;
+      top: 167px;
+      background-position:center;
+    }
+    #d15{
+      left:575px;
+      top: 397px;
+      background-position:center;
+    }
+    #d16{
+      left:575px;
+      top: 75px;
+      background-position:center;
+    }
+    #d17{
+      left:910px;
+      top: 455px;
+      background-position:top;
+    }
+    #d18{
+      left:710px;
+      top: 505px;
+      background-position:top;
+    }
+    #d19{
+      left:610px;
+      top: 635px;
+      background-position:top;
+    }
+    #d20{
+      left:131px;
+      top: 365px;
+      background-position:center;
+    }
+    #d21{
+      left:691px;
+      top: 195px;
+      background-position:center;
+    }
+    #d22{
+      left:291px;
+      top: 495px;
+      background-position:center;
+    }
+    #d23{
+      left:415px;
+      top: 65px;
+      background-position:center;
+    }
+    #d24{
+      left:865px;
+      top: 325px;
+      background-position:left;
+    }
+    #d25{
+      left:445px;
+      top: 375px;
+      background-position:left;
+    }
+
+
+    </style>
+  </head>
+  <body>
+
+    <div id="bg">
+      <div class="day" id="d1" onclick="fday1()">
+        <p>1</p>
+      </div>
+      <div class="day" id="d2" onclick="fday2()">
+        <p>2</p>
+      </div>
+      <div class="day" id="d3" onclick="fday3()">
+        <p>3</p>
+      </div>
+      <div class="day" id="d4" onclick="fday4()">
+        <p>4</p>
+      </div>
+      <div class="day" id="d5" onclick="fday5()">
+        <p>5</p>
+      </div>
+      <div class="day" id="d6" onclick="fday6()">
+        <p>6</p>
+      </div>
+      <div class="day" id="d7" onclick="fday7()">
+        <p>7</p>
+      </div>
+      <div class="day" id="d8" onclick="fday8()">
+        <p>8</p>
+      </div>
+      <div class="day" id="d9" onclick="fday9()">
+        <p>9</p>
+      </div>
+      <div class="day" id="d10" onclick="fday10()">
+        <p>10</p>
+      </div>
+      <div class="day" id="d11" onclick="fday11()">
+        <p>11</p>
+      </div>
+      <div class="day" id="d12" onclick="fday12()">
+        <p>12</p>
+      </div>
+      <div class="day" id="d13" onclick="fday13()">
+        <p>13</p>
+      </div>
+      <div class="day" id="d14" onclick="fday14()">
+        <p>14</p>
+      </div>
+      <div class="day" id="d15" onclick="fday15()">
+        <p>15</p>
+      </div>
+      <div class="day" id="d16" onclick="fday16()">
+        <p>16</p>
+      </div>
+      <div class="day" id="d17" onclick="fday17()">
+        <p>17</p>
+      </div>
+      <div class="day" id="d18" onclick="fday18()">
+        <p>18</p>
+      </div>
+      <div class="day" id="d19" onclick="fday19()">
+        <p>19</p>
+      </div>
+      <div class="day" id="d20" onclick="fday20()">
+        <p>20</p>
+      </div>
+      <div class="day" id="d21" onclick="fday21()">
+        <p>21</p>
+      </div>
+      <div class="day" id="d22" onclick="fday22()">
+        <p>22</p>
+      </div>
+      <div class="day" id="d23" onclick="fday23()">
+        <p>23</p>
+      </div>
+      <div class="day" id="d24" onclick="fday24()">
+        <p>24</p>
+      </div>
+      <div class="day" id="d25" onclick="fday25()">
+        <p>25</p>
+      </div>
+    </div>
+
+
+    <script>
+
+    var d1 = document.getElementById('d1');
+    var d1p = document.getElementById('d1').childNodes[1];
+    var d2 = document.getElementById('d2');
+    var d2p = document.getElementById('d2').childNodes[1];
+    var d3 = document.getElementById('d3');
+    var d3p = document.getElementById('d3').childNodes[1];
+    var d4 = document.getElementById('d4');
+    var d4p = document.getElementById('d4').childNodes[1];
+    var d5 = document.getElementById('d5');
+    var d5p = document.getElementById('d5').childNodes[1];
+    var d6 = document.getElementById('d6');
+    var d6p = document.getElementById('d6').childNodes[1];
+    var d7 = document.getElementById('d7');
+    var d7p = document.getElementById('d7').childNodes[1];
+    var d8 = document.getElementById('d8');
+    var d8p = document.getElementById('d8').childNodes[1];
+    var d9 = document.getElementById('d9');
+    var d9p = document.getElementById('d9').childNodes[1];
+    var d10 = document.getElementById('d10');
+    var d10p = document.getElementById('d10').childNodes[1];
+    var d11 = document.getElementById('d11');
+    var d11p = document.getElementById('d11').childNodes[1];
+    var d12 = document.getElementById('d12');
+    var d12p = document.getElementById('d12').childNodes[1];
+    var d13 = document.getElementById('d13');
+    var d13p = document.getElementById('d13').childNodes[1];
+    var d14 = document.getElementById('d14');
+    var d14p = document.getElementById('d14').childNodes[1];
+    var d15 = document.getElementById('d15');
+    var d15p = document.getElementById('d15').childNodes[1];
+    var d16 = document.getElementById('d16');
+    var d16p = document.getElementById('d16').childNodes[1];
+    var d17 = document.getElementById('d17');
+    var d17p = document.getElementById('d17').childNodes[1];
+    var d18 = document.getElementById('d18');
+    var d18p = document.getElementById('d18').childNodes[1];
+    var d19 = document.getElementById('d19');
+    var d19p = document.getElementById('d19').childNodes[1];
+    var d20 = document.getElementById('d20');
+    var d20p = document.getElementById('d20').childNodes[1];
+    var d21 = document.getElementById('d21');
+    var d21p = document.getElementById('d21').childNodes[1];
+    var d22 = document.getElementById('d22');
+    var d22p = document.getElementById('d22').childNodes[1];
+    var d23 = document.getElementById('d23');
+    var d23p = document.getElementById('d23').childNodes[1];
+    var d24 = document.getElementById('d24');
+    var d24p = document.getElementById('d24').childNodes[1];
+    var d25 = document.getElementById('d25');
+    var d25p = document.getElementById('d25').childNodes[1];
+
+
+
+    var fday1 = function(){
+
+      d1.style.backgroundImage="url(pics/mario.jpg)";
+      d1.style.border=" gold solid 2px";
+      d1.style.backgroundSize="contain";
+      d1p.style.display="none";
+    }
+
+    var fday2 = function(){
+      d2.style.backgroundImage="url(pics/dustin.jpg)";
+      d2.style.border=" gold solid 2px";
+      d2.style.backgroundSize="contain";
+      d2p.style.display="none";
+    }
+
+    var fday3 = function(){
+      d3.style.backgroundImage="url(pics/rock.jpg)";
+      d3.style.border=" gold solid 2px";
+      d3.style.backgroundSize="150px";
+      d3p.style.display="none";
+    }
+
+    var fday4 = function(){
+      d4.style.backgroundImage="url(pics/titan.jpg)";
+      d4.style.border=" gold solid 2px";
+      d4.style.backgroundSize="84px";
+      d4p.style.display="none";
+    }
+
+    var fday5 = function(){
+      d5.style.backgroundImage="url(pics/pooh.jpg)";
+      d5.style.border=" gold solid 2px";
+      d5.style.backgroundSize="105px";
+      d5p.style.display="none";
+    }
+
+    var fday6 = function(){
+      d6.style.backgroundImage="url(pics/dragon.jpg)";
+      d6.style.border=" gold solid 2px";
+      d6.style.backgroundSize="120px";
+      d6p.style.display="none";
+    }
+
+    var fday7 = function(){
+      d7.style.backgroundImage="url(pics/zelda.jpg)";
+      d7.style.border=" gold solid 2px";
+      d7.style.backgroundSize="100px";
+      d7p.style.display="none";
+    }
+
+    var fday8 = function(){
+      d8.style.backgroundImage="url(pics/bugs.jpg)";
+      d8.style.border=" gold solid 2px";
+      d8.style.backgroundSize="106px";
+      d8p.style.display="none";
+    }
+
+    var fday9 = function(){
+      d9.style.backgroundImage="url(pics/pikachu.png)";
+      d9.style.border=" gold solid 2px";
+      d9.style.backgroundSize="108px";
+      d9p.style.display="none";
+    }
+
+    var fday10 = function(){
+      d10.style.backgroundImage="url(pics/snowman.jpeg)";
+      d10.style.border=" gold solid 2px";
+      d10.style.backgroundSize="108px";
+      d10p.style.display="none";
+    }
+
+    var fday11 = function(){
+      d11.style.backgroundImage="url(pics/beatles.jpg)";
+      d11.style.border=" gold solid 2px";
+      d11.style.backgroundSize="80px";
+      d11p.style.display="none";
+    }
+
+    var fday12 = function(){
+      d12.style.backgroundImage="url(pics/batman.jpg)";
+      d12.style.border=" gold solid 2px";
+      d12.style.backgroundSize="113px";
+      d12p.style.display="none";
+    }
+
+    var fday13 = function(){
+      d13.style.backgroundImage="url(pics/star.jpg)";
+      d13.style.border=" gold solid 2px";
+      d13.style.backgroundSize="105px";
+      d13p.style.display="none";
+    }
+
+    var fday14 = function(){
+      d14.style.backgroundImage="url(pics/minecraft.jpg)";
+      d14.style.border=" gold solid 2px";
+      d14.style.backgroundSize="105px";
+      d14p.style.display="none";
+    }
+
+    var fday15 = function(){
+      d15.style.backgroundImage="url(pics/shakin.jpg)";
+      d15.style.border=" gold solid 2px";
+      d15.style.backgroundSize="92px";
+      d15p.style.display="none";
+    }
+
+    var fday16 = function(){
+      d16.style.backgroundImage="url(pics/tree.jpg)";
+      d16.style.border=" gold solid 2px";
+      d16.style.backgroundSize="82px";
+      d16p.style.display="none";
+    }
+
+    var fday17 = function(){
+      d17.style.backgroundImage="url(pics/deer.jpg)";
+      d17.style.border=" gold solid 2px";
+      d17.style.backgroundSize="74px";
+      d17p.style.display="none";
+    }
+
+    var fday18 = function(){
+      d18.style.backgroundImage="url(pics/hero.jpg)";
+      d18.style.border=" gold solid 2px";
+      d18.style.backgroundSize="144px";
+      d18p.style.display="none";
+    }
+
+    var fday19 = function(){
+      d19.style.backgroundImage="url(pics/puppy.jpg)";
+      d19.style.border=" gold solid 2px";
+      d19.style.backgroundSize="75px";
+      d19p.style.display="none";
+    }
+
+    var fday20 = function(){
+      d20.style.backgroundImage="url(pics/cat.jpg)";
+      d20.style.border=" gold solid 2px";
+      d20.style.backgroundSize="130px";
+      d20p.style.display="none";
+    }
+
+    var fday21 = function(){
+      d21.style.backgroundImage="url(pics/wolverine.jpg)";
+      d21.style.border=" gold solid 2px";
+      d21.style.backgroundSize="110px";
+      d21p.style.display="none";
+    }
+
+    var fday22 = function(){
+      d22.style.backgroundImage="url(pics/cena.jpg)";
+      d22.style.border=" gold solid 2px";
+      d22.style.backgroundSize="140px";
+      d22p.style.display="none";
+    }
+
+    var fday23 = function(){
+      d23.style.backgroundImage="url(pics/robin.jpg)";
+      d23.style.border=" gold solid 2px";
+      d23.style.backgroundSize="90px";
+      d23p.style.display="none";
+    }
+
+    var fday24 = function(){
+      d24.style.backgroundImage="url(pics/sleigh.jpg)";
+      d24.style.border=" gold solid 2px";
+      d24.style.backgroundSize="120px";
+      d24p.style.display="none";
+    }
+
+    var fday25 = function(){
+      d25.style.backgroundImage="url(pics/presents.jpg)";
+      d25.style.border=" gold solid 2px";
+      d25.style.backgroundSize="107px";
+      d25p.style.display="none";
+    }
+
+
+
+    </script>
+  </body>
+</html>
